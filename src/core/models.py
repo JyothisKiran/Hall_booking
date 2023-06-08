@@ -1,0 +1,11 @@
+from django.db import models
+from datetime import datetime
+# Create your models here.
+
+
+class BaseModel (models.Model):
+    created_at = models.DateTimeField(db_index=True, default=datetime.now())
+    updated_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        abstract = True

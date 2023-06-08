@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+
+{% block style %}
+    <style>
+        .col-6{
+            border: 1px dotted black;
+        }
+
+        form{
+            text-align: center;
+            top: 40;
+        }
+    </style>
+    
+{% endblock style %}
+    
+{% block contents %}
+    
+<body>
+   <div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <h1>{{error_message}}</h1>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+   </div>
+    {{book}}
+</body>
+</html>
+{% endblock contents %}
+    
